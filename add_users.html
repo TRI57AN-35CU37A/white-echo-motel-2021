@@ -1,0 +1,163 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>White Echo Hotel</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	<div class="main_content">
+	<div class="topnav" id="myTopnav">
+		<h1>White Echo Hotel</h1>
+		<img src="images/white_echo_logo.png" alt="title">
+  <a href="#home" class="active">Home</a>
+  <a href="#news">News</a>
+  <a href="#contact">Contact</a>
+  <a href="#about">About</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+		<h2>Select your check in date:</h2>
+		<label>Check in date:</label><input id="checkInDate" type="date">
+		
+		<h2>Enter in your number of nights:</h2>
+		<label>Number of Nights:</label><input id="numberNights" type="number" min="1" max="10">
+		
+		
+		<h1>Click on a card to make a booking</h1>
+<div class="row">
+  <div class="column">
+    <div class="roomCard" data-name="Studio Room" data-price="219"> 
+		<div class="textOverlay"><h3>Studio Room ($219 per night</h3></div>
+		<img src="images/studio_room.jpg" >
+		<br><br>
+		Ideal combination of style and functionality, offering modern ensuite with walk-in shower, washer/dryer. Fridge & microwave.
+		<br><br>
+ 31m², Super King bed, 1-2 guests.
+		<br><br>
+Air-conditioning, 55" flat screen TV with SKY channels
+FREE unlimited WiFi.
+</div>
+  </div>
+  <div class="column">
+    <div class="roomCard" data-name="Executive Studio" data-price="249">
+		<h3 class="textOverlay">Executive Studio
+($249 per night)
+</h3>
+		<img src="images/executive_suite.jpg" >
+		<br><br>
+		Perfect haven for business and pleasure. Enjoy more space with your own lounge area complete with comfortable chaise couch, desk, fridge & microwave. Ensuite features bath & separate shower, double handbasins & washer/dryer. 
+		<br><br>
+47m², Super King bed, 1-2 guests.
+		<br><br>
+Air-conditioning, 55" flat screen TV with SKY channels, FREE unlimited WiFi.
+
+	  
+	  </div>
+  </div>
+  <div class="column">
+    <div class="roomCard"  data-name="Two Bedroom" data-price="329"><h3 class="textOverlay">Two Bedroom 
+($329 per night)
+</h3>
+		<img src="images/two_bedroom_suite.jpg" >
+		<br><br>
+	  Stunning suites offering sophisticated style and space. Relax in the large living/dining area or host friends & colleagues. 2 separate bedrooms both with 55" TVs. Bathroom with walk in shower & double showerheads, washer & dryer.<br><br>
+65m², Super King + 2 Single beds, 1-4 guests.<br><br>
+Air-conditioning, 3 x 55" flat screen TV with SKY channels, FREE unlimited WiFi.
+
+	  </div>
+  </div>
+  <div class="column">
+    <div class="roomCard" data-name="Family Suite" data-price="289"><h3 class="textOverlay">Family Suite
+$289 per night
+</h3>
+		<img src="images/family_suite.jpg" >
+		<br><br>
+	  Excellent choice for a family or groups of friends wanting more space. Kids can enjoy their own bedroom. Ensuite with luxurious walk in shower & double showerheads, washer/dryer. Microwave & refrigerator.
+		<br><br>53m², King + 2 Single beds, 1-4 guests.<br><br>
+Air-conditioning, 2 x 55" flat screen TV with SKY channels, FREE unlimited WiFi.
+
+</div>
+  </div>
+</div>
+		
+		<h2> Indulge Yourself ;)</h2>
+		<p>Why not take the stress out of your visit and add some extra special services with your stay?</p>
+		<label><input class="addCheck" data-price="0" type="checkbox" value="Cot">Cot - Free :)</label>
+		<label><input class="addCheck" data-price="60" type="checkbox" value="Massage">Massage - $60</label>
+		<label><input class="addCheck" data-price="50" type="checkbox" value="Facial">Facial - $50</label>
+		<label><input class="addCheck" data-price="25" type="checkbox" value="Breakfast">Breakfast - $25 per room/day</label>
+		
+		<h2>Enter your Details</h2>
+		
+		<label>First Name:</label> <input autocomplete="on" id="firstNameInput" placeholder="John" required="" title="Enter your first name" type="text"><br>
+		<label>Last Name:</label> <input autocomplete="on" id="lastNameInput" placeholder="Smith" required="" title="Enter your last name" type="text"><br>
+		<label>Email Address:</label> <input autocomplete="on" id="emailInput" placeholder="johnsmith@gmail.com" required="" title="Enter your email address" type="email"><br>
+		<label>Cellphone:</label> <input autocomplete="on" id="cellphoneInput" placeholder="0274822256" required="" title="Enter your cellphone number" type="tel"><br>
+		
+		<h1 id="roomInformation">Room Information:</h1>
+		<table>
+			<tr>
+				<th>Room Information</th>
+				<th>
+					<div id="roomOutput"></div>
+				</th>
+			</tr>
+			<tr>
+				<td>Room</td>
+				<td><div id="priceOutput"></div></td>
+			</tr>
+		</table>
+		
+		
+		<button type="button" onclick="checkInputs()" id="confirmButton">Confirm Booking</button>
+		<div id="confirmOverlay">
+			<p>Your booking has been confirmed</p>
+			<a href="javascript:void(0)" onclick="document.getElementByID('confirmOverlay').style.height='0'">&times;</a>
+		</div>
+	
+	
+
+		<!--***FOOTER***-->
+	<footer>
+		<div>
+			<!--footer links-->
+			<a href="index.html">Home</a> | <a href="spatial.html">Spatial Design</a> | <a href="product.html">Product Design</a> | <a href="about.html">About DVC</a>
+			<br>
+			<br>
+			<!--copyright statement-->
+			 Site developed by Tristan Escueta ©2021
+		</div>
+	</footer>
+	</div>
+	
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.9.1/firebase.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyDpxKjNROrgC_nd9jm0BB3kK4rBzU_Jz_8",
+    authDomain: "white-echo-motel-8e8c1.firebaseapp.com",
+    databaseURL: "https://white-echo-motel-8e8c1-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "white-echo-motel-8e8c1",
+    storageBucket: "white-echo-motel-8e8c1.appspot.com",
+    messagingSenderId: "1088424913202",
+    appId: "1:1088424913202:web:245b87e8311c104e594f2b",
+    measurementId: "G-NCK9NSQNYR"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+	
+	<script src="white_echo_v1.js"></script>
+</body>
+</html>
